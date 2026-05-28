@@ -1,141 +1,172 @@
-# Hotel Booking Prediction
+# Hotel Booking Cancellation Prediction
 
-## Overview
+## Project Overview
+This project analyzes hotel booking data to identify customer behavior patterns and predict booking cancellations using machine learning models.
 
-This project focuses on predicting hotel booking cancellations using Machine Learning techniques. The objective was to analyze customer booking behavior and build a predictive model that helps hotels identify bookings that are likely to be cancelled, enabling better operational planning and revenue management.
+The project includes:
+- Exploratory Data Analysis (EDA)
+- Data Cleaning & Feature Engineering
+- Business Insights Generation
+- Data Visualization
+- Machine Learning Model Comparison
 
-The project involved data cleaning, exploratory data analysis (EDA), feature engineering, model building, and performance evaluation using Python-based data science libraries.
-
----
-
-## Problem Statement
-
-Hotel booking cancellations can lead to revenue loss, inefficient room allocation, and operational challenges. The goal of this project was to develop a classification model capable of predicting whether a booking would be cancelled based on customer and reservation details.
-
----
-
-## Technologies & Tools Used
-
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Scikit-learn
-* Jupyter Notebook
+The primary goal is to help hotels reduce cancellation-related revenue loss and improve booking management strategies.
 
 ---
 
 ## Dataset Information
 
-The dataset contains hotel booking records with features such as:
+The dataset contains hotel booking records for:
+- Resort Hotels
+- City Hotels
 
-* Hotel type
-* Lead time
-* Arrival date
-* Meal type
-* Market segment
-* Number of special requests
-* Previous cancellations
-* Room type
-* Customer details
+### Dataset Size
+- Rows: 119,390
+- Columns: 32
 
-Target Variable:
+### Features Include
+- Lead Time
+- Booking Status
+- ADR (Average Daily Rate)
+- Customer Type
+- Meal Type
+- Market Segment
+- Room Type
+- Booking Changes
+- Special Requests
+- Cancellation Status
 
-* `is_canceled` (0 = Not Cancelled, 1 = Cancelled)
+---
+
+## Technologies Used
+
+```python
+Python
+Pandas
+NumPy
+Matplotlib
+Seaborn
+Plotly
+Scikit-learn
+Folium
+```
 
 ---
 
 ## Project Workflow
 
 ### 1. Data Cleaning
+- Handled missing values using `fillna()`
+- Removed invalid records
+- Converted date columns into datetime format
+- Removed records with zero guests
 
-* Handled missing values
-* Removed duplicate records
-* Processed categorical variables
-* Checked data consistency
-
-### 2. Exploratory Data Analysis (EDA)
-
-Performed analysis to identify:
-
-* Cancellation trends
-* Seasonal booking patterns
-* Customer behavior insights
-* Correlation between features
-
-Visualizations were created using Matplotlib and Seaborn to better understand the dataset.
+### 2. Exploratory Data Analysis
+Performed analysis on:
+- Country-wise guest distribution
+- Monthly hotel demand
+- Room pricing trends
+- Cancellation trends
+- Resort vs City hotel comparison
 
 ### 3. Feature Engineering
+- Mean Encoding for categorical variables
+- Date feature extraction
+- Outlier handling using logarithmic transformation
+- Feature selection using Lasso Regression
 
-* Encoded categorical variables
-* Selected important predictive features
-* Prepared training and testing datasets
-
-### 4. Model Building
-
-Implemented Machine Learning models including:
-
-* Logistic Regression
-* Decision Tree
-* Random Forest Classifier
-
-### 5. Model Evaluation
-
-Models were evaluated using:
-
-* Accuracy Score
-* Confusion Matrix
-* Classification Report
-
-The Random Forest model achieved approximately **85% accuracy** on the test dataset.
+### 4. Machine Learning Models
+Implemented multiple models:
+- Logistic Regression
+- Naive Bayes
+- Decision Tree
+- Random Forest
+- K-Nearest Neighbors (KNN)
 
 ---
 
-## Key Insights
+## Important Insights
 
-* Higher lead times were associated with increased cancellation probability.
-* Customers with previous cancellations were more likely to cancel again.
-* Certain market segments showed higher cancellation rates.
-* Booking behavior patterns varied across hotel types and seasons.
+### Booking Cancellation Trends
+- Higher lead time increases cancellation probability.
+- Customers with non-refundable deposits are highly likely to cancel.
+- Customers with more special requests are less likely to cancel.
+
+### Seasonal Trends
+- Resort hotels experience peak demand during July and August.
+- City hotels receive consistently higher bookings throughout the year.
+
+### Pricing Insights
+- Resort hotel ADR increases significantly during peak seasons.
+- City hotel pricing remains relatively stable compared to resort hotels.
+
+---
+
+## Model Performance
+
+| Model | Accuracy |
+|------|------|
+| Logistic Regression | 70.58% |
+| Naive Bayes | 59.33% |
+| Decision Tree | 95.03% |
+| Random Forest | 95.72% |
+| KNN | 95.36% |
+
+### Best Performing Model
+```python
+Random Forest Accuracy: 95.72%
+```
+
+---
+
+## Data Visualizations
+
+The project includes:
+- Choropleth maps
+- Line charts
+- Correlation analysis
+- Box plots
+- Distribution plots
 
 ---
 
 ## Business Impact
 
-This solution can help hotels:
+This project helps hotels:
+- Predict potential booking cancellations
+- Optimize room pricing strategies
+- Improve occupancy planning
+- Reduce revenue leakage
+- Understand customer booking behavior
 
-* Improve occupancy planning
-* Reduce revenue leakage due to cancellations
-* Optimize customer engagement strategies
-* Support data-driven operational decisions
+---
+
+## Folder Structure
+
+```bash
+Hotel-Booking-Prediction/
+│
+├── hotel_booking_prediction.ipynb
+├── hotel_bookings.csv
+├── README.md
+└── images/
+```
 
 ---
 
 ## Future Improvements
 
-* Hyperparameter tuning for better performance
-* Deployment using Flask/Streamlit
-* Real-time prediction dashboard integration
-* Advanced ensemble models
+- Hyperparameter tuning
+- Streamlit dashboard deployment
+- Real-time prediction API
+- Ensemble learning methods
+- Power BI dashboard integration
 
 ---
 
-## Repository Structure
+## Author
 
-```bash
-Hotel-Booking-prediction/
-│
-├── data/
-├── notebooks/
-├── images/
-├── hotel_booking_prediction.ipynb
-├── requirements.txt
-└── README.md
-```
-
----
-
-## Conclusion
-
-This project demonstrates the application of Machine Learning and data analytics techniques to solve a real-world business problem. It highlights skills in EDA, feature engineering, predictive modeling, and model evaluation using Python.
+### Mukund Mane
+- Python Developer
+- Data Analytics Enthusiast
+- Machine Learning & Business Intelligence
